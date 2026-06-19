@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Per Giorgia 💘</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  text-align: center;
+  background: linear-gradient(135deg, #ffd1dc, #fff0f5);
+  overflow-x: hidden;
+}
+
+header {
+  padding: 25px;
+  color: #c2185b;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+button {
+  width: 85%;
+  padding: 15px;
+  margin: 8px auto;
+  border: none;
+  border-radius: 15px;
+  background: #ff5c8a;
+  color: white;
+  font-size: 16px;
+  display: block;
+}
+
+#box {
+  margin: 20px;
+  font-size: 18px;
+  color: #333;
+  white-space: pre-line;
+}
+
+#apology {
+  display: none;
+  padding: 20px;
+  background: #fff;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.heart {
+  position: fixed;
+  color: #ff5c8a;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); opacity: 1; }
+  to { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<header>💘 Per Giorgia</header>
+<p>Da Bri, sempre con te.</p>
+
+<p>Per ricordarti che io sono sempre qui</p>
+
+<button onclick="calma()">💬 Parla con me</button>
+<button onclick="respira()">🌿 Respira</button>
+<button onclick="amore()">💌 Ti amo</button>
+<button onclick="modalitaArrabbiata()">🤍 Modalità calma</button>
+<button onclick="scusa()">🥺 Scusa</button>
+<button onclick="testo()">Quando non ci credi</button>
+
+<div id="box"></div>
+
+<div id="apology">
+  <h2>🥺 Scusa Gio</h2>
+  <p>
+    Non voglio vincere un litigio.<br>
+    Voglio te serena e noi felici.<br><br>
+    Ti amo. — Bri 💘
+  </p>
+</div>
+
+<script>
+function calma() {
+  document.getElementById("box").innerText =
+  "Ciccina… io sono qui.\nNon vado da nessuna parte 💖 chiamami se vuoi";
+}
+
+function respira() {
+  document.getElementById("box").innerText =
+  "Inspira 🌿 4 sec\nTrattieni 🌿 4 sec\nEspira 🌿 6 sec\n\nVa tutto bene amore mio. chiamami";
+}
+
+function amore() {
+  const frasi = [
+    "Ti amo più di ieri, meno di domani 💘",
+    "Sei casa per me, cicci.",
+    "Anche arrabbiata… sei tutto.",
+    "Il nostro filo rosso non si spezzerà mai 💖",
+    "Sei la mia luce più bella"
+  ];
+
+  document.getElementById("box").innerText =
+    frasi[Math.floor(Math.random() * frasi.length)];
+}
+
+function modalitaArrabbiata() {
+  document.getElementById("box").innerText =
+`🤍 Va bene essere arrabbiata.
+ma siamo sempre io e te, due persone che si amano e immaginano un futuro, togli questo orgoglio e chiariamo.
+Io non ti rispondo con rabbia.
+Ti rispondo con amore.
+
+Quando vuoi, sono qui. — Bri`;
+}
+
+function testo() {
+  document.getElementById("box").innerText =
+`Quando non ci credi, ricordati di noi.
+Di tutto quello che abbiamo passato.
+Di ogni volta che siamo tornate insieme.
+
+Io ci sarò sempre per te.
+
+TI AMO INFINITAMENTE 💘`;
+}
+
+function scusa() {
+  document.getElementById("apology").style.display = "block";
+  startHearts();
+}
+
+function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 300);
+}
+</script>
+
+</body>
+</html>
